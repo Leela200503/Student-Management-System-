@@ -117,6 +117,8 @@ npm install
 3. Start the React application.
 
 npm start
+4. Start the backend application.
+./gradlew bootRun
 
 The application will run on:
 http://localhost:3000
