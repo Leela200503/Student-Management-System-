@@ -5,9 +5,7 @@ This project allows users to **Add, View, Update, and Delete student details** u
 
 The frontend is built using React, the backend is developed using Spring Boot, and the database used is MySQL.
 
----
-
-## Features
+Features
 
 * Add new student
 * View all students
@@ -17,9 +15,7 @@ The frontend is built using React, the backend is developed using Spring Boot, a
 * REST API integration
 * Responsive UI
 
----
-
-## Tech Stack
+Tech Stack
 
 Frontend
 React
@@ -39,30 +35,8 @@ Visual Studio Code (Frontend)
 IntelliJ IDEA (Backend)
 MySQL Workbench (Database)
 
----
 
-## Project Structure
-
-student-management-system
-│
-├── frontend
-│     ├── src
-│     ├── components
-│     ├── pages
-│     └── package.json
-│
-├── backend
-│     ├── src/main/java
-│     ├── controller
-│     ├── model
-│     ├── repository
-│     └── pom.xml
-│
-└── README.md
-
----
-
-## Application Workflow
+Application Workflow
 
 1. User opens the React application.
 2. React sends HTTP requests to the Spring Boot backend.
@@ -70,9 +44,7 @@ student-management-system
 4. Data is stored or retrieved from MySQL.
 5. The response is returned to the React frontend and displayed to the user.
 
----
-
-## API Endpoints
+API Endpoints
 
 GET /students
 Fetch all students
@@ -89,9 +61,7 @@ Update student information
 DELETE /student/{id}
 Delete student
 
----
-
-## How to Run the Project
+How to Run the Project
 
 ### Backend (Spring Boot)
 
@@ -150,5 +120,3 @@ Leela
 
 Final Year Engineering Student
 Full Stack Developer (React + Spring Boot)
-
----
