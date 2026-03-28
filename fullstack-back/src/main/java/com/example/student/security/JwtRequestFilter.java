@@ -30,7 +30,7 @@ protected void doFilterInternal(HttpServletRequest request, HttpServletResponse 
     String path = request.getServletPath();
 
     // ✅ Skip JWT for public APIs
-    if (path.equals("/login") || path.equals("/register") || path.equals("/api/users")) {
+    if (path.equals("/login") || path.equals("/register")) {
         chain.doFilter(request, response);
         return;
     }

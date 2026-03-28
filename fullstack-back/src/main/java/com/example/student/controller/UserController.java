@@ -4,6 +4,7 @@ import com.example.student.exception.UserNotFoundException;
 import com.example.student.model.User;
 import com.example.student.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.attribute.UserPrincipalNotFoundException;
@@ -15,8 +16,16 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @PostMapping("/user")
     User newUser(@RequestBody User newUser){
+        if (newUser.getPassword() != null && !newUser.getPassword().isEmpty()) {
+            newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
+        } else {
+            newUser.setPassword(passwordEncoder.encode("student123"));
+        }
         return userRepository.save(newUser);
     }
 
@@ -38,6 +47,9 @@ public class UserController {
                     user.setEmail(newUser.getEmail());
                     user.setMarks(newUser.getMarks());
                     user.setName(newUser.getName());
+                    if (newUser.getPassword() != null && !newUser.getPassword().isEmpty()) {
+                        user.setPassword(passwordEncoder.encode(newUser.getPassword()));
+                    }
                     return  userRepository.save(user);
                 }).orElseThrow(()->new UserNotFoundException(id));
     }
