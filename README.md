@@ -90,6 +90,7 @@ npm start
 4. Start the backend application.
 ./gradlew bootRun
 
+docker-compose up -d
 The application will run on:
 http://localhost:3000
 
